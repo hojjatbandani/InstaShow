@@ -1,0 +1,23 @@
+import { createIcon } from "../Icon";
+
+const SvgContent = (props: React.SVGProps<SVGSVGElement>) => (
+	<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+		<path
+			d="M3.85 8.62C3.65224 7.78378 3.92403 6.90863 4.57117 6.26275C5.21831 5.61687 6.09403 5.34706 6.93 5.54669C7.42004 4.78028 8.26697 4.31655 9.17665 4.31655C10.0863 4.31655 10.9333 4.78028 11.4233 5.54669C12.3151 5.34618 13.2476 5.61644 13.8939 6.26279C14.5402 6.90915 14.8105 7.84153 14.6099 8.73336C15.3764 9.2234 15.8401 10.0703 15.8401 10.98C15.8401 11.8897 15.3764 12.7366 14.6099 13.2267C14.8096 14.1171 14.5401 15.0478 13.8954 15.6937C13.2509 16.3396 12.3208 16.6111 11.4299 16.4134C10.9405 17.1828 10.0919 17.6487 9.17999 17.6487C8.2681 17.6487 7.41943 17.1828 6.92999 16.4134C6.03957 16.613 5.10889 16.3435 4.46296 15.6989C3.81704 15.0543 3.54557 14.1242 3.74333 13.2334C2.9709 12.7445 2.50269 11.8941 2.50269 10.98C2.50269 10.0659 2.9709 9.21552 3.74333 8.72669"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		/>
+		<path
+			d="M6.75 11L8.5 12.75L12 9.25"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		/>
+	</svg>
+);
+
+export const BadgeCheckIcon = createIcon(SvgContent, "BadgeCheckIcon");
+export default BadgeCheckIcon;

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-black/10;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body * {
+    @apply transition-all duration-150 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .soft-card {
+    @apply border border-black/10 bg-white shadow-[0_10px_30px_-18px_rgba(0,0,0,0.25)];
+  }
+
+  .soft-border {
+    @apply border-b border-black/10;
+  }
+
+  .glass {
+    @apply bg-white/90 backdrop-blur-md;
+  }
+
+  .new-card {
+    @apply bg-gray-100 shadow-none;
+  }
+}
