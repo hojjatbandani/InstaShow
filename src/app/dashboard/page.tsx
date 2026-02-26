@@ -1,47 +1,39 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { UsersIcon, ToolsIcon } from "@/components/icons";
+import Flex from "@/components/ui/Flex";
+import Grid from "@/components/ui/Grid";
+import RoleCard from "@/components/dashboard/RoleCard";
+
+export const metadata: Metadata = {
+  title: "Professional Dashboard - InstaFix",
+};
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-background-secondary">
-      {/* Dashboard Header */}
-      <header className="bg-white border-b border-border">
-        <div className="mx-auto max-w-screen-xl px-6 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-title">Dashboard</h1>
-          <Link
-            href="/"
-            className="text-sm text-text-muted hover:text-text-primary transition"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </header>
+    <Flex direction="col" align="center" justify="center" className="min-h-[60vh]">
+      <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome to InstaFix</h1>
+      <p className="text-gray-500 mb-8">Select your dashboard to get started</p>
 
-      {/* Dashboard Content */}
-      <div className="mx-auto max-w-screen-xl px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Stats Cards */}
-          <div className="bg-white p-6 rounded-card shadow-card">
-            <h3 className="text-text-muted text-sm mb-2">Total Bookings</h3>
-            <p className="text-3xl font-bold text-title">24</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-card shadow-card">
-            <h3 className="text-text-muted text-sm mb-2">Completed Jobs</h3>
-            <p className="text-3xl font-bold text-title">18</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-card shadow-card">
-            <h3 className="text-text-muted text-sm mb-2">Pending</h3>
-            <p className="text-3xl font-bold text-title">6</p>
-          </div>
-        </div>
-
-        {/* Recent Activity */}
-        <div className="mt-8 bg-white p-6 rounded-card shadow-card">
-          <h2 className="text-lg font-semibold text-title mb-4">Recent Activity</h2>
-          <p className="text-text-muted">No recent activity.</p>
-        </div>
-      </div>
-    </main>
+      <Grid cols={2} gap="md" className="w-full max-w-2xl">
+        <RoleCard
+          href="/dashboard/customer"
+          title="Customer Dashboard"
+          description="Browse services, manage bookings, and more"
+          icon={UsersIcon}
+          iconBg="bg-blue-50"
+          iconHoverBg="group-hover:bg-blue-100"
+          iconColor="text-[#3E50F7]"
+        />
+        <RoleCard
+          href="/dashboard/professional"
+          title="Professional Dashboard"
+          description="Manage jobs, track earnings, and grow your business"
+          icon={ToolsIcon}
+          iconBg="bg-green-50"
+          iconHoverBg="group-hover:bg-green-100"
+          iconColor="text-green-600"
+        />
+      </Grid>
+    </Flex>
   );
 }

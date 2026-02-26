@@ -1,10 +1,21 @@
+import type {Metadata} from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+	title: "Renovation Services",
+};
 import {Badge, Button, Container, Flex, Grid, Section} from "@/components/ui";
-import {CheckCircleIcon, ClockIcon, IncreaseIcon, LocationIcon, StarIcon} from "@/components/icons";
+import {
+	CheckCircleIcon,
+	ClockIcon,
+	IncreaseIcon,
+	LocationIcon,
+	StarIcon,
+} from "@/components/icons";
 import {IconProps} from "@/components/icons";
 import {FC} from "react";
-import renovationHeroImage from "@/assets/images/renovation-hero.png";
-import serviceImageSample from "@/assets/images/service_01.png";
+import renovationHeroImage from "@/assets/web/images/renovation-hero.png";
+import serviceImageSample from "@/assets/web/images/service_01.png";
 
 const stats = [
 	{value: "$75 - $85/h", label: "Average Rate"},
@@ -28,7 +39,8 @@ const services = [
 	{
 		id: 1,
 		title: "Basement Development",
-		description: "Transform your basement into a functional living space, rental suite, or entertainment area.",
+		description:
+			"Transform your basement into a functional living space, rental suite, or entertainment area.",
 		image: serviceImageSample,
 		// image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
 		priceRange: "$40K-$80K+",
@@ -36,44 +48,56 @@ const services = [
 	{
 		id: 2,
 		title: "Kitchen Remodel",
-		description: "Complete kitchen renovations including cabinets, countertops, and appliances.",
-		image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+		description:
+			"Complete kitchen renovations including cabinets, countertops, and appliances.",
+		image:
+			"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
 		priceRange: "$25K-$60K+",
 	},
 	{
 		id: 3,
 		title: "Bathroom Update",
-		description: "Modern bathroom renovations from simple updates to complete overhauls.",
-		image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop",
+		description:
+			"Modern bathroom renovations from simple updates to complete overhauls.",
+		image:
+			"https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop",
 		priceRange: "$15K-$40K+",
 	},
 	{
 		id: 4,
 		title: "Whole Home Renovation",
-		description: "Comprehensive home renovations covering multiple rooms and systems.",
-		image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+		description:
+			"Comprehensive home renovations covering multiple rooms and systems.",
+		image:
+			"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
 		priceRange: "$100K-$300K+",
 	},
 	{
 		id: 5,
 		title: "Home Additions",
-		description: "Expand your living space with new rooms, extensions, or second stories.",
-		image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+		description:
+			"Expand your living space with new rooms, extensions, or second stories.",
+		image:
+			"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
 		priceRange: "$80K-$200K+",
 	},
 	{
 		id: 6,
 		title: "Exterior Facelift",
-		description: "Update your home's curb appeal with siding, roofing, and landscaping.",
-		image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
+		description:
+			"Update your home's curb appeal with siding, roofing, and landscaping.",
+		image:
+			"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
 		priceRange: "$20K-$60K+",
 	},
 ];
 
 const featuredContractor = {
 	name: "Summit Renovations",
-	description: "Award-winning basement and home renovation specialists serving the Greater Calgary Area since 2010. Known for transparent pricing and strict timeline adherence.",
-	image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
+	description:
+		"Award-winning basement and home renovation specialists serving the Greater Calgary Area since 2010. Known for transparent pricing and strict timeline adherence.",
+	image:
+		"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
 	features: [
 		"Fully licensed and insured in Alberta",
 		"5-year warranty on workmanship",
@@ -86,19 +110,25 @@ const recentProjects = [
 		id: 1,
 		title: "Modern Basement Suite",
 		location: "Calgary, AB",
-		image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+		image:
+			"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+		price: "85k"
 	},
 	{
 		id: 2,
 		title: "Entertainment Basement",
 		location: "Edmonton, AB",
-		image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+		image:
+			"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+		price: "85k"
 	},
 	{
 		id: 3,
 		title: "Kitchen Transformation",
 		location: "Red Deer, AB",
-		image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+		image:
+			"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+		price: "85k"
 	},
 ];
 
@@ -106,9 +136,18 @@ export default function RenovationCategory() {
 	return (
 		<>
 			{/* Hero Section */}
-			<Section spacing="none" className="bg-gradient-to-b from-[#B1CFFF] to-[#F7FAFB] pt-24 md:pt-36 pb-12 md:pb-16">
+			<Section
+				spacing="none"
+				className="bg-gradient-to-b from-[#B1CFFF] to-[#F7FAFB] pt-24 md:pt-36 pb-12 md:pb-16"
+			>
 				<Container size="xl">
-					<Flex direction="col" gap="md" align="center" justify="center" smDirection="row">
+					<Flex
+						direction="col"
+						gap="md"
+						align="center"
+						justify="center"
+						smDirection="row"
+					>
 						{/* Left Section */}
 						<div className="w-full md:w-1/2">
 							<p className="text-[#0077CC] text-xs font-semibold uppercase tracking-wide mb-3">
@@ -121,12 +160,27 @@ export default function RenovationCategory() {
 								{`Connect with Alberta's top-rated renovation contractors for basement
 								developments, kitchen remodels, additions, and complete home transformations.`}
 							</p>
-							<Flex direction="col" justify="center" align="center" smDirection="row" gap="sm"
-										className="md:justify-start mb-6 md:mb-8">
-								<Button variant="primary" size="lg" weight="semiBold" className="w-full md:w-auto">
+							<Flex
+								direction="col"
+								justify="center"
+								align="center"
+								smDirection="row"
+								gap="sm"
+								className="md:justify-start mb-6 md:mb-8"
+							>
+								<Button
+									variant="primary"
+									size="lg"
+									weight="semiBold"
+									className="w-full md:w-auto"
+								>
 									Start Your Project
 								</Button>
-								<Button variant="outline" size="lg" className="w-full md:w-auto">
+								<Button
+									variant="outline"
+									size="lg"
+									className="w-full md:w-auto"
+								>
 									View Past Projects
 								</Button>
 							</Flex>
@@ -134,30 +188,41 @@ export default function RenovationCategory() {
 								{trustItems.map((item, idx) => (
 									<div key={idx} className="flex items-center gap-2">
 										<item.Icon size="sm" className="text-[#3B82F6]"/>
-										<span className="text-sm text-colors-muted">{item.title}</span>
+										<span className="text-sm text-colors-muted">
+                      {item.title}
+                    </span>
 									</div>
 								))}
 							</Flex>
 						</div>
 						{/* Right Section */}
 						<div className="w-full md:w-1/2 relative">
-							<Image src={renovationHeroImage} alt="Hero" className="rounded-xl"/>
+							<Image
+								src={renovationHeroImage}
+								alt="Hero"
+								className="rounded-xl"
+							/>
 							<div className="absolute bottom-6 left-6 bg-white flex flex-row items-center p-4 rounded-lg">
 								<Flex gap="md" align="center" justify="start" direction="row">
-									<Flex gap="md" align="center" justify="center" direction="row"
-												className="rounded-full bg-[#E0F2FE] p-[10px]">
+									<Flex
+										gap="md"
+										align="center"
+										justify="center"
+										direction="row"
+										className="rounded-full bg-[#E0F2FE] p-[10px]"
+									>
 										<IncreaseIcon size="md"/>
 									</Flex>
 									<Flex gap="xs" align="start" justify="start" direction="col">
-										<p className="text-colors-primary text-sm font-semibold">ROI Average</p>
+										<p className="text-colors-primary text-sm font-semibold">
+											ROI Average
+										</p>
 										<p className="text-colors-muted text-xs">+72% Home Value</p>
 									</Flex>
 								</Flex>
 							</div>
 						</div>
-
 					</Flex>
-
 				</Container>
 			</Section>
 
@@ -171,15 +236,29 @@ export default function RenovationCategory() {
 								<p className="text-lg sm:text-xl md:text-2xl font-semibold text-[#3B82F6] mb-2">
 									{stat.value}
 								</p>
-								<p className="text-xs sm:text-sm text-colors-muted">{stat.label}</p>
+								<p className="text-xs sm:text-sm text-colors-muted">
+									{stat.label}
+								</p>
 							</div>
 						))}
 					</Grid>
 				</Container>
 			</Section>
 
+			<Section
+				bgColor="#F7FAFB"
+				className="!py-2">
+				<Container size="xl" className="!px-1">
+					<hr/>
+				</Container>
+			</Section>
+
 			{/* Popular Renovation Services */}
-			<Section spacing="none" bgColor="#F7FAFB" className="py-8 md:py-10 lg:py-20">
+			<Section
+				spacing="none"
+				bgColor="#F7FAFB"
+				className="py-8 md:py-10 lg:py-20"
+			>
 				<Container size="xl">
 					<div className="mb-8 md:mb-12">
 						<h2 className="text-2xl md:text-3xl font-semibold text-[#0B1B2B] mb-3">
@@ -212,9 +291,12 @@ export default function RenovationCategory() {
 									<p className="text-base text-colors-muted mb-3 line-clamp-2">
 										{service.description}
 									</p>
-									<Badge variant="none"
-												 className="text-sm font-semibold text-[#0077CC] px-4 py-2 bg-[#D8E4FF] rounded-[6px]">
-										<span className="mr-1">Budget:</span>{service.priceRange}
+									<Badge
+										variant="none"
+										className="text-sm font-semibold text-[#0077CC] px-4 py-2 bg-[#D8E4FF] rounded-[6px]"
+									>
+										<span className="mr-1">Budget:</span>
+										{service.priceRange}
 									</Badge>
 								</div>
 							</div>
@@ -224,14 +306,28 @@ export default function RenovationCategory() {
 			</Section>
 
 			{/* Featured Contractor */}
-			<Section spacing="none" bgColor="#F1F5F9" className="py-8 md:py-10 lg:py-20">
+			<Section
+				spacing="none"
+				bgColor="#F1F5F9"
+				className="py-8 md:py-10 lg:py-20"
+			>
 				<Container size="xl">
-					<Flex gap="2xl" align="center" justify="center" mdDirection="row" direction="col"
-								className="bg-[#F7FAFC] p-12 rounded-lg">
+					<Flex
+						gap="2xl"
+						align="center"
+						justify="center"
+						mdDirection="row"
+						direction="col"
+						className="bg-[#F7FAFC] p-12 rounded-lg"
+					>
 						{/* Left Section */}
 						<div className="w-full md:w-1/2">
-							<Flex gap="sm" align="center" justify="start"
-										className="text-[#0077CC] text-base font-semibold uppercase tracking-wide">
+							<Flex
+								gap="sm"
+								align="center"
+								justify="start"
+								className="text-[#0077CC] text-base font-semibold uppercase tracking-wide"
+							>
 								<StarIcon size="md"/>
 								<span>Featured Contractor</span>
 							</Flex>
@@ -241,10 +337,13 @@ export default function RenovationCategory() {
 							<p className="text-colors-muted text-sm md:text-base mb-6">
 								{featuredContractor.description}
 							</p>
-							<ul className="space-y-3 mb-6">
+							<ul className="space-y-5 mb-6">
 								{featuredContractor.features.map((feature, idx) => (
-									<li key={idx} className="flex items-center gap-3">
-										<CheckCircleIcon size="md" className="text-[#3B82F6] flex-shrink-0"/>
+									<li key={idx} className="flex items-center gap-4">
+										<CheckCircleIcon
+											size="md"
+											className="text-[#3B82F6] flex-shrink-0"
+										/>
 										<span className="text-sm text-[#0B1B2B]">{feature}</span>
 									</li>
 								))}
@@ -271,7 +370,11 @@ export default function RenovationCategory() {
 			</Section>
 
 			{/* Recent Transformations */}
-			<Section spacing="none" bgColor="#FAFBFC" className="py-8 md:py-10 lg:py-20">
+			<Section
+				spacing="none"
+				bgColor="#FAFBFC"
+				className="py-8 md:py-10 lg:py-20"
+			>
 				<Container size="xl">
 					<div className="text-center mb-8 md:mb-12">
 						<h2 className="text-2xl md:text-3xl font-semibold text-[#0B2545] mb-3">
@@ -299,8 +402,11 @@ export default function RenovationCategory() {
 									<h3 className="text-white font-semibold text-lg md:text-xl mb-2">
 										{project.title}
 									</h3>
-									<div className="flex items-center justify-between">
-										<span className="text-white/80 text-xs sm:text-sm">{project.location}</span>
+									<div className="flex items-center justify-start">
+                    <span className="text-white/80 text-xs sm:text-sm mr-1">
+                      {project.location} -
+                    </span>
+										<span className="text-white/80 text-xs sm:text-sm">~{project.price}</span>
 									</div>
 								</div>
 							</div>
@@ -310,15 +416,21 @@ export default function RenovationCategory() {
 			</Section>
 
 			{/* CTA Section */}
-			<Section spacing="none" bgColor="#FAFBFC" className="py-8 md:py-10 lg:py-20 px-4 md:px-0">
-				<Container size="xl"
-									 className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-16 px-6 sm:px-10 md:px-16 rounded-xl">
+			<Section
+				spacing="none"
+				bgColor="#FAFBFC"
+				className="py-8 md:py-10 lg:py-20 px-4 md:px-0"
+			>
+				<Container
+					size="xl"
+					className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-16 px-6 sm:px-10 md:px-16 rounded-xl"
+				>
 					<div className="text-center">
 						<h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4">
 							Ready to start your renovation?
 						</h2>
 						<p className="text-white/80 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto">
-							Get matched with top-rated local contractors. Free quotes, no obligation.
+							Get detailed quotes from up to 3 verified contractors in your area. No obligation, just honest pricing.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-3 justify-center">
 							<Button
@@ -332,9 +444,9 @@ export default function RenovationCategory() {
 							<Button
 								variant="none"
 								size="lg"
-								className="border border-white text-white hover:bg-white/10 bg-white/20"
+								className="border border-white text-white hover:bg-white/10"
 							>
-								Call Us Now
+								How It Works
 							</Button>
 						</div>
 					</div>

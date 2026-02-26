@@ -41,4 +41,76 @@
   .new-card {
     @apply bg-gray-100 shadow-none;
   }
+
+  .terms {
+    section {
+      @apply mb-12 scroll-mt-32;
+    }
+
+    h2 {
+      @apply text-2xl font-semibold text-[#0B2140] mb-6;
+    }
+
+    h4 {
+      @apply text-xl font-semibold text-[#0B2140] mb-6;
+    }
+
+    p {
+      @apply text-colors-muted text-md font-normal leading-relaxed my-6;
+
+      &.second-text {
+        @apply ml-8;
+      }
+    }
+
+    hr {
+      @apply bg-gray-300 w-full mb-6;
+    }
+
+    .info-box {
+      h4 {
+        @apply text-white text-base font-semibold m-0;
+      }
+
+      p {
+        @apply text-white text-base font-light m-0;
+      }
+    }
+  }
+
+  .privacy {
+    section {
+      @apply mb-12 scroll-mt-32;
+    }
+
+    h2 {
+      @apply text-2xl font-semibold text-[#0B2140] mb-4;
+    }
+
+    h4 {
+      @apply text-xl font-semibold text-[#0B2140] mb-6;
+    }
+
+    p {
+      @apply text-[#0B2140] text-base leading-relaxed mb-6;
+
+      &.second-text {
+        @apply ml-8;
+      }
+    }
+
+    .info-box {
+      h4 {
+        @apply text-white text-xl font-semibold mb-0;
+      }
+
+      p {
+        @apply text-white font-normal text-base mb-0;
+      }
+    }
+
+    hr {
+      @apply bg-gray-300 w-full mb-6;
+    }
+  }
 }

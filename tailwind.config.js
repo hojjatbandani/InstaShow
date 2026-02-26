@@ -71,6 +71,17 @@ module.exports = {
         button: "0 1px 2px rgba(0, 0, 0, 0.05)",
       },
 
+      // Animations
+      keyframes: {
+        "slide-in-left": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        "slide-in-left": "slide-in-left 0.3s ease-out",
+      },
+
       // Gradients (use with bg-gradient-to-r)
       gradientColorStops: {
         "btn-primary-from": "#3B82F6",
