@@ -234,7 +234,7 @@ export default function Services() {
                 justify="start"
                 lgDirection="row"
               >
-                <Button variant="primary" size="lg" weight="semiBold" >
+                <Button variant="primary" size="lg" weight="semiBold" href="/request-quote">
                   Request a Quote
                 </Button>
                 <Button variant="outline" size="lg">
@@ -367,6 +367,7 @@ export default function Services() {
                 <Button
                   variant="none"
                   size="sm"
+                  href="/request-quote"
                   className="w-full bg-[#F7F9FB] border border-gray-200 hover:bg-gray-200"
                 >
                   Get Quotes
@@ -501,6 +502,7 @@ export default function Services() {
                 variant="none"
                 size="lg"
                 weight="semiBold"
+                href="/request-quote"
                 className="bg-white text-[#3B82F6] hover:bg-gray-100"
               >
                 Get Free Quotes

@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "@/assets/web/css/swiper.css";
-import { Pagination } from "swiper/modules";
+import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import { Section, SectionTitle, Flex, Badge } from "@/components/ui";
 
@@ -74,11 +74,19 @@ export default function Testimonials() {
 
         <Swiper
           slidesPerView={1}
-          spaceBetween={20}
+          spaceBetween={24}
           grabCursor={true}
           centeredSlides={true}
+          effect="coverflow"
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 80,
+            modifier: 1.2,
+            slideShadows: true,
+          }}
           autoplay={{
-            delay: 2500,
+            delay: 2800,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -87,7 +95,7 @@ export default function Testimonials() {
           breakpoints={{
             640: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 24,
             },
             1024: {
               slidesPerView: 3,
@@ -98,7 +106,7 @@ export default function Testimonials() {
               spaceBetween: 30,
             },
           }}
-          modules={[Pagination]}
+          modules={[Pagination, EffectCoverflow, Autoplay]}
           className="mb-12 mySwiper"
         >
           {testimonials.map((testimonial, index) => (

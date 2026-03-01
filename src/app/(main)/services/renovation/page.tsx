@@ -437,6 +437,7 @@ export default function RenovationCategory() {
 								variant="none"
 								size="lg"
 								weight="semiBold"
+								href="/request-quote"
 								className="bg-white text-[#3B82F6] hover:bg-gray-100"
 							>
 								Get Free Quotes

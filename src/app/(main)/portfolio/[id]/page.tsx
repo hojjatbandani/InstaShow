@@ -412,6 +412,7 @@ export default function ProjectDetail() {
                 <Button
                   variant="none"
                   size="md"
+                  href="/request-quote"
                   className="w-full bg-white text-[#3B82F6] hover:bg-gray-100"
                 >
                   Get a Free Quote

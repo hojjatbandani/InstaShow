@@ -16,28 +16,22 @@ import CanadImage from "@/assets/web/images/Canada.png";
 
 const footerLinks = {
   Services: [
-    { label: "Plumbing", href: "#" },
-    { label: "Electrical", href: "#" },
-    { label: "Cleaning", href: "#" },
-    { label: "HVAC", href: "#" },
+    { label: "Plumbing", href: "/services" },
+    { label: "Renovation", href: "/services/renovation" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Request Quote", href: "/request-quote" },
   ],
   Company: [
-    { label: "About Us", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#contact" },
-    { label: "Blog", href: "#" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact", href: "/contact-us" },
+    { label: "Blog", href: "/blog" },
   ],
   Support: [
-    { label: "Help Center", href: "#" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-  ],
-  Resources: [
-    { label: "Help Center", href: "#" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Help Center", href: "/contact-us" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
   ],
 };
 
@@ -131,12 +125,12 @@ export default function Footer() {
                     <ul className="space-y-2 md:space-y-3">
                       {links.map((link) => (
                         <li key={link.label}>
-                          <a
+                          <Link
                             href={link.href}
                             className="text-sm md:text-base text-colors-muted hover:text-gray-900 transition"
                           >
                             {link.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

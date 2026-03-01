@@ -6,14 +6,18 @@ import logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import { Flex } from "@/components/ui";
 
+const servicesSubmenu = [
+  { label: "Plumbing", href: "/services" },
+  { label: "Renovation", href: "/services/renovation" },
+  { label: "Other Services", href: "/services" },
+];
+
 const nav = [
-  { label: "Services", href: "/services" },
-  { label: "Portfolio Detail", href: "/portfolio" },
-  { label: "Renovation Detail", href: "/services/renovation" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
   { label: "About us", href: "/about-us" },
   { label: "Contact us", href: "/contact-us" },
-  { label: "Privacy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
 ];
 
 export default function Header() {
@@ -35,6 +39,32 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-0 md:flex">
+          {/* Services dropdown */}
+          <div className="relative group">
+            <button
+              className="text-sm md:text-md font-normal text-colors-primary hover:text-[18px] transform duration-300 py-4 px-4 flex items-center gap-1"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Services
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="bg-white border border-[#F2F2F2] rounded-lg shadow-lg py-2 min-w-[180px]">
+                {servicesSubmenu.map((item) => (
+                  <Link
+                    key={item.href + item.label}
+                    href={item.href}
+                    className="block text-sm font-normal text-colors-primary hover:bg-gray-50 py-2 px-4"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -106,22 +136,34 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
-          <nav className="px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-gray-100 bg-white rounded-b-xl shadow-lg">
+          <nav className="px-6 py-4 space-y-1">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide pt-2 pb-1">Services</p>
+            {servicesSubmenu.map((item) => (
+              <Link
+                key={item.href + item.label}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 pl-3 text-[15px] font-medium text-gray-700 hover:text-gray-900"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide pt-4 pb-1">Main</p>
             {nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="block py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Link
               href="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900"
+              className="block py-3 mt-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 border-t border-gray-100"
             >
               Sign In
             </Link>
